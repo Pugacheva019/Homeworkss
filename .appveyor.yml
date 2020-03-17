@@ -2,8 +2,8 @@ image: Visual Studio 2019
 
 init:
   - git config --global core.autocrlf true
- before_build:
+before_build:
   - nuget restore semester2/HM1/factorial.sln
   
- build:
+build:
   project: semester2/HM1/factorial.sln
