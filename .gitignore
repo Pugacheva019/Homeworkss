@@ -1,16 +1,42 @@
-# Node rules:
-## Grunt intermediate storage (http://gruntjs.com/creating-plugins#storing-task-files)
-.grunt
+# Prerequisites 
+*.d 
 
-## Dependency directory
-## Commenting this out is preferred by some people, see
-## https://docs.npmjs.com/misc/faq#should-i-check-my-node_modules-folder-into-git
-node_modules
+# Compiled Object files 
+*.slo 
+*.lo 
+*.o 
+*.obj 
 
-# Book build output
-_book
+# Precompiled Headers 
+*.gch 
+*.pch 
 
-# eBook build output
-*.epub
-*.mobi
-*.pdf
+# Compiled Dynamic libraries 
+*.so 
+*.dylib 
+*.dll 
+
+# Fortran module files 
+*.mod 
+*.smod 
+
+# Compiled Static libraries 
+*.lai 
+*.la 
+*.a 
+*.lib 
+
+# Executables 
+*.exe 
+*.out 
+*.app
+
+# Another things (VS)
+**/.vs
+*.vcxproj.user
+**/Debug
+**/bin
+**/obj
+*/packages
+
+*.DS_Store
