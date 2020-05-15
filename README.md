@@ -1,4 +1,7 @@
 # Homeworkss <img src='https://bettercodehub.com/edge/badge/Pugacheva019/Homeworkss?branch=master'>
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/9b3ef28bdd0e4289a5dfcbb720749c19)](https://app.codacy.com/manual/Pugacheva019/Homeworkss?utm_source=github.com&utm_medium=referral&utm_content=Pugacheva019/Homeworkss&utm_campaign=Badge_Grade_Dashboard)
+
 Repository for Homework on C#
 
 
