@@ -23,23 +23,24 @@ namespace AnalogClock
         /// <summary>
         /// Clock's Hands
         /// </summary>
-        int SecondHand = 90, MinuteHand = 50, HourHand = 25;
+        private const int SecondHand = 90;
+        private const int MinuteHand = 50;
+        private const int HourHand = 25;
 
         /// <summary>
         /// Clock's Face's center
         /// </summary>
         int CenterX = 75, CenterY = 75;
 
-        Bitmap Back;
+        private Bitmap Back;
 
-        Graphics FaceClock;
+        private Graphics FaceClock;
 
         /// <summary>
         /// Clock's loading
         /// </summary>
         private void ClockLoad(object sender, EventArgs e)
         {
-
             Back = new Bitmap(150,150);
             Timer.Interval = 100;
             timerTest.Tick += new EventHandler(TestClock);
@@ -51,17 +52,17 @@ namespace AnalogClock
         private void Timer_Tick(object sender, EventArgs e)
         {
             FaceClock = Graphics.FromImage(Back);
-            int Seconds = DateTime.Now.Second;
-            int Minutes = DateTime.Now.Minute;
+            int seconds = DateTime.Now.Second;
+            int minutes = DateTime.Now.Minute;
             int Hours = DateTime.Now.Hour;
-            int[] Hand = new int[2];
+            int[] hand = new int[2];
             FaceClock.Clear(Color.White);
-            Hand = Corder(Seconds, SecondHand);
-            FaceClock.DrawLine(new Pen(Color.Yellow, 1f), new Point(CenterX, CenterY), new Point(Hand[0], Hand[1]));
-            Hand = Corder(Minutes, MinuteHand);
-            FaceClock.DrawLine(new Pen(Color.LightGray, 2f), new Point(CenterX, CenterY), new Point(Hand[0], Hand[1]));
-            Hand = HourCorner(Hours % 12, Minutes, HourHand);
-            FaceClock.DrawLine(new Pen(Color.Black, 2f), new Point(CenterX, CenterY), new Point(Hand[0], Hand[1]));
+            hand = Corder(seconds, SecondHand);
+            FaceClock.DrawLine(new Pen(Color.Yellow, 1f), new Point(CenterX, CenterY), new Point(hand[0], hand[1]));
+            hand = Corder(minutes, MinuteHand);
+            FaceClock.DrawLine(new Pen(Color.LightGray, 2f), new Point(CenterX, CenterY), new Point(hand[0], hand[1]));
+            hand = HourCorner(Hours % 12, minutes, HourHand);
+            FaceClock.DrawLine(new Pen(Color.Black, 2f), new Point(CenterX, CenterY), new Point(hand[0], hand[1]));
             pictureBox1.Image = Back;
         }
 
