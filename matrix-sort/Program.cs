@@ -8,7 +8,6 @@ namespace MatrixSort
         {
             var rnd = new Random();
             int[,] matrix = new int[lineSize, columnSize];
-            Console.WriteLine("matrix");
             for (int i = 0; i < lineSize; i++)
             {
                 for (int j = 0; j < columnSize; j++)
@@ -20,11 +19,11 @@ namespace MatrixSort
             return matrix;
         }
 
-        private static void Conclusion(int[,] matrix, int linesSize, int columnSize)
+        private static void Conclusion(int[,] matrix)
         {
-            for (int i = 0; i < linesSize; i++)
+            for (int i = 0; i < matrix.GetLength(0); i++)
             {
-                for (int j = 0; j < columnSize; j++)
+                for (int j = 0; j < matrix.GetLength(1); j++)
                 {
                     Console.Write(matrix[i, j] + " ");
                 }
@@ -32,9 +31,9 @@ namespace MatrixSort
             }
         }
 
-        private static int[,] Sorting(int[,] matrix, int linesSize, int columnSize)
+        private static int[,] Sorting(int[,] matrix)
         {
-            int n = linesSize - 1;
+            int n = matrix.GetLength(1) - 1;
             while (n > 0) // сортировка столбцов матрицы по первым элементам
             {
                 int index = 0;
@@ -45,9 +44,9 @@ namespace MatrixSort
                         index = j; // поиск индекса столбца максимального элемента
                     }
                 }
-                for (int i = 0; i < columnSize; i++)
+                for (int i = 0; i < matrix.GetLength(0); i++)
                 {
-                     int temp = matrix[i, index];
+                    int temp = matrix[i, index];
                     matrix[i, index] = matrix[i, n]; // меняем элементы столбцов местами
                     matrix[i, n] = temp;
                 }
@@ -64,9 +63,9 @@ namespace MatrixSort
             Console.WriteLine("Enter the size column of matrix");
             var columnsSize = int.Parse(Console.ReadLine());
             int[,] matrix = Filling(linesSize, columnsSize);
-            Conclusion(matrix, linesSize, columnsSize);
-            Sorting(matrix, columnsSize, linesSize);
-            Conclusion(matrix, linesSize, columnsSize);
+            Conclusion(matrix);
+            Sorting(matrix);
+            Conclusion(matrix);
         }
     }
 }
