@@ -5,19 +5,25 @@ namespace List
     class List
     {
         public bool IsEmpty => Size == 0;
-        public Element head;
+        
+        private Element head;
+        
         public int Size { get;  set; }
 
-        public class Element
+        private class Element
         {
             public string Data { get; set; }
+            
             public Element Next { get; set; }
+            
             public Element Previous { get; set; }
+            
             public Element(string data)
             {
                 Data = data;
             }
         }
+        
         public void Append(int index, string data)
         {
             if (index < 0 || index > Size)
@@ -34,6 +40,7 @@ namespace List
                 head = thisElement;
                 head.Next = temp;
                 ++Size;
+                return;
             }
             else if (index == Size)
             {
@@ -43,6 +50,7 @@ namespace List
                 }
                 current.Next = thisElement;
                 ++Size;
+                return;
             }
             else
             {
@@ -57,6 +65,7 @@ namespace List
                             thisElement.Previous.Next = thisElement;
                         }
                         ++Size;
+                        return;
                     }
                     current = current.Next;
                 }
@@ -86,6 +95,7 @@ namespace List
                         currentPrevious.Next = current.Next;
                     }
                     --Size;
+                    return;
                 }
                 ++currentIndex;
                 currentPrevious = current;
@@ -128,7 +138,7 @@ namespace List
             }
         }
 
-        public Element GetElement(int index)
+        private Element GetElement(int index)
         {
             if (index < 0 || index > Size)
             {
