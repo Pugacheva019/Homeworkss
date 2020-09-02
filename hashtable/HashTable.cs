@@ -1,7 +1,7 @@
 ﻿using System;
 using ListProgram;
 
-namespace hashtable
+namespace Hashtable
 {
     /// <summary>
     /// Class for hash table.
@@ -13,7 +13,7 @@ namespace hashtable
         /// <summary>
         /// Size of the hash table.
         /// </summary>
-        private readonly int Size;
+        private readonly int size;
 
         /// <summary>
         /// Count of elements in hash table.
@@ -59,7 +59,7 @@ namespace hashtable
         /// </summary>
         /// <param name="position">Position of list in the array.</param>
         /// <returns></returns>
-        private List HASHList(int position)
+        private List HashList(int position)
         {
             List Hashlist = buckets[position];
             if (Hashlist == null)
@@ -78,7 +78,7 @@ namespace hashtable
         public void Append(int key, string data)
         {
             var list = HASHList(Math.Abs(HashFunction.HashFunction(key, Size)) % Size);
-            list.Append(key,list.Size, data);
+            list.Append(key, list.Size, data);
             ++Count;
         }
 
