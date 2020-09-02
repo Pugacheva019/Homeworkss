@@ -1,5 +1,5 @@
 ﻿using System;
-namespace hashtable
+namespace Hashtable
 {
     public class Program
     {
