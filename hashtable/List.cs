@@ -15,7 +15,7 @@ namespace ListProgram
         /// <summary>
         /// Top of the list.
         /// </summary>
-        public Element head;
+        private Element head;
 
         /// <summary>
         /// The size of the list.

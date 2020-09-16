@@ -18,34 +18,35 @@ namespace Hashtable
         /// <summary>
         /// Count of elements in hash table.
         /// </summary>
-        public int Count { get; set; }
+        private int count { get; set; }
 
         /// <summary>
         /// current hash function.
         /// </summary>
-        private readonly IHashFunction HashFunction;
+        private readonly iHashFunction hashFunction;
 
         /// <summary>
         /// creates the hash table with a specific size.
         /// </summary>
         /// <param name="size">Size of table.</param>
-        public HashTable(int Size, IHashFunction HashFunction)
+        public HashTable(int size, iHashFunction hashFunction)
         {
-            if (HashFunction == null)
+            if (hashFunction == null)
             {
                 Console.WriteLine("Hash function was not put!");
                 return;
             }
-            buckets = new List[Size];
-            this.HashFunction = HashFunction;
-            this.Size = Size;
+            buckets = new List[size];
+            this.hashFunction = hashFunction;
+            this.size = size;
         }
+
         /// <summary>
         /// Method for printing Elements.
         /// </summary>
-        public void Printing()
+        public void Printi()
         {
-            for (int i = 0; i < Size; i++)
+            for (int i = 0; i < size; i++)
             {
                 if (buckets[i] != null)
                 {
@@ -61,13 +62,13 @@ namespace Hashtable
         /// <returns></returns>
         private List HashList(int position)
         {
-            List Hashlist = buckets[position];
-            if (Hashlist == null)
+            List HashList = buckets[position];
+            if (HashList == null)
             {
-                Hashlist = new List();
-                buckets[position] = Hashlist;
+                HashList = new List();
+                buckets[position] = HashList;
             }
-            return Hashlist;
+            return HashList;
         }
 
         /// <summary>
@@ -77,36 +78,26 @@ namespace Hashtable
         /// <param name="data">Element value.</param>
         public void Append(int key, string data)
         {
-            var list = HASHList(Math.Abs(HashFunction.HashFunction(key, Size)) % Size);
+            var list = HashList(Math.Abs(hashFunction.HashFunction(key, size)) % size);
             list.Append(key, list.Size, data);
-            ++Count;
+            ++count;
         }
 
         /// <summary>
         /// Method for removing element from the table.
         /// </summary>
         /// <param name="key">key of element.</param>
-        public void Delete(int key)
-        {
-            var HashList = HASHList(Math.Abs(HashFunction.HashFunction(key, Size)) % Size);
-            HashList.RemoveByKey(key);
-            --Count;
-        }
+        public void Delete(int key) => HashList(Math.Abs(hashFunction.HashFunction(key, size)) % size).RemoveByKey(key);
 
         /// <summary>
         /// Hash table is empty or not.
         /// </summary>
-        public bool IsEmpty => Size == 0;
+        public bool IsEmpty => size == 0;
 
         // <summary>
         /// Method for finding elements in the hash table.
         /// </summary>
         /// <param name="key"> key of element.</param>
-        public bool Find(int key)
-        {
-            var HashList = HASHList(Math.Abs(HashFunction.HashFunction(key, Size)) % Size);
-            return HashList.Finding(key);
-        }
-
+        public bool Find(int key) => HashList(Math.Abs(hashFunction.HashFunction(key, size)) % size).Finding(key);
     }
 }
