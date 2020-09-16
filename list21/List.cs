@@ -1,29 +1,29 @@
-﻿using System;
+using System;
 
 namespace List
 {
     class List
     {
         public bool IsEmpty => Size == 0;
-        
+
         private Element head;
-        
-        public int Size { get;  set; }
+
+        public int Size { get; set; }
 
         private class Element
         {
             public string Data { get; set; }
-            
+
             public Element Next { get; set; }
-            
+
             public Element Previous { get; set; }
-            
+
             public Element(string data)
             {
                 Data = data;
             }
         }
-        
+
         public void Append(int index, string data)
         {
             if (index < 0 || index > Size)
@@ -32,8 +32,6 @@ namespace List
                 return;
             }
             var thisElement = new Element(data);
-            Element current = head;
-            int currentIndex = 0;
             if (index == 0)
             {
                 Element temp = head;
@@ -44,6 +42,7 @@ namespace List
             }
             else if (index == Size)
             {
+                Element current = head;
                 while (current.Next != null)
                 {
                     current = current.Next;
@@ -54,6 +53,8 @@ namespace List
             }
             else
             {
+                Element current = head;
+                int currentIndex = 0;
                 while (current != null)
                 {
                     if (currentIndex == index)
@@ -81,9 +82,10 @@ namespace List
             }
             Element current = head;
             Element currentPrevious = null;
-            int currentIndex = 0;
+
             while (current != null)
             {
+                int currentIndex = 0;
                 if (currentIndex == index)
                 {
                     if (currentPrevious == null)
