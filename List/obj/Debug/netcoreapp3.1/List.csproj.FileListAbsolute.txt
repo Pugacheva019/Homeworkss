@@ -1,0 +1,11 @@
+/Users/anna/Projects/List/List/obj/Debug/netcoreapp3.1/List.csprojAssemblyReference.cache
+/Users/anna/Projects/List/List/obj/Debug/netcoreapp3.1/List.AssemblyInfoInputs.cache
+/Users/anna/Projects/List/List/obj/Debug/netcoreapp3.1/List.AssemblyInfo.cs
+/Users/anna/Projects/List/List/bin/Debug/netcoreapp3.1/List
+/Users/anna/Projects/List/List/bin/Debug/netcoreapp3.1/List.deps.json
+/Users/anna/Projects/List/List/bin/Debug/netcoreapp3.1/List.runtimeconfig.json
+/Users/anna/Projects/List/List/bin/Debug/netcoreapp3.1/List.runtimeconfig.dev.json
+/Users/anna/Projects/List/List/bin/Debug/netcoreapp3.1/List.dll
+/Users/anna/Projects/List/List/bin/Debug/netcoreapp3.1/List.pdb
+/Users/anna/Projects/List/List/obj/Debug/netcoreapp3.1/List.dll
+/Users/anna/Projects/List/List/obj/Debug/netcoreapp3.1/List.pdb
