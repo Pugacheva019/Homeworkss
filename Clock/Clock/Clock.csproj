@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F527181D-9F13-41CB-B099-844FE749C722}</ProjectGuid>
+    <ProjectGuid>{7E7250B6-7D80-47BB-AD5C-1483FC52E991}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ButtonRunning</RootNamespace>
-    <AssemblyName>ButtonRunning</AssemblyName>
+    <RootNamespace>Clock</RootNamespace>
+    <AssemblyName>Clock</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,16 +46,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="RunningButton.cs">
+    <Compile Include="Clock.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="RunningButton.Designer.cs">
-      <DependentUpon>RunningButton.cs</DependentUpon>
+    <Compile Include="Clock.Designer.cs">
+      <DependentUpon>Clock.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="RunningButton.resx">
-      <DependentUpon>RunningButton.cs</DependentUpon>
+    <EmbeddedResource Include="Clock.resx">
+      <DependentUpon>Clock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
